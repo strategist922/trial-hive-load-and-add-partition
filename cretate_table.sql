@@ -1,0 +1,16 @@
+USE default;
+DROP TABLE IF EXISTS test_load_data010;
+CREATE TABLE IF NOT EXISTS test_load_data010 (
+    id INT,
+    name STRING
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY "\t"
+PARTITIONED BY (dt STRING, device STRING, type_id INT);
+
+DROP TABLE IF EXISTS test_load_data020;
+CREATE TABLE IF NOT EXISTS test_load_data020 (
+    id INT,
+    name STRING
+)
+PARTITIONED BY (dt STRING, device STRING, type_id INT)
+STORED AS SEQUENCEFILE;
