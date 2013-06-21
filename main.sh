@@ -1,8 +1,11 @@
 #!/bin/sh
 
 ruby gen_data.rb
-sudo -u hdfs hive < cretate_table.sql
-sudo -u hdfs hive < load_data.sql
-sudo -u hdfs bash copy_data.sh
-sudo -u hdfs hive < load_data_from_hdfs.sql
-sudo -u hdfs hive < add_new_partition.sql
+hive < cretate_table.sql
+hive < load_data.sql
+bash copy_data.sh
+bash copy_data020.sh
+#hive < load_data_from_hdfs.sql
+#hive < add_new_partition.sql
+#hive < load_data_from_hdfs020.sql
+#hive < add_new_partition020.sql

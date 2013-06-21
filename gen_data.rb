@@ -3,6 +3,7 @@ require "digest/md5"
 base_path = "/tmp/ishikawa_yu/test_data"
 begin
     Dir::mkdir(base_path, 0777)
+rescue => e
 end
 md5 = Digest::MD5.new
 0.upto(23).each do |hour|
